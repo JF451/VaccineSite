@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import Tabs from './Components/Tabs';
 import Footer from './Components/Footer';
+import SimpleMap from './Components/SimpleMap';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
          After 'while, <em>Crocodile</em>! 
        </div> 
        <div label="Locations"> 
-         Nothing to see here, this tab is <em>extinct</em>! 
+         <SimpleMap />
        </div> 
        <div label="Appointments">
        </div>
