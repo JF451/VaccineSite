@@ -1,8 +1,10 @@
 import React from 'react';
 import './footer.css'
 
-function Footer()
+
+function Footer({setButtonPopup})
 {
+
 
     return (
         <div className="Footer">
@@ -14,11 +16,11 @@ function Footer()
                     </div>
 
                     <div className="col">
-                        <h4 className="block">Contact</h4>
+                        <h4 onClick={() => setButtonPopup(true)} className="block" >Contact</h4>
                     </div>
 
                     <div className="col">
-                        <h4 className="block"><a className="block" href={"https://www.cdc.gov/coronavirus/2019-ncov/faq.html"}>COVID-19 FAQ</a></h4>
+                        <h4><a className="block" href={"https://www.cdc.gov/coronavirus/2019-ncov/faq.html"}>COVID-19 FAQ</a></h4>
                     </div>
 
                     <div className="col">
