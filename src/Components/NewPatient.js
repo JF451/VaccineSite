@@ -1,15 +1,16 @@
 import React from 'react'
 import './newPatient.css'
 
-function NewPatient()
+function NewPatient({setButtonPopupPatient})
 {
 
     return (
-        <button className="button">
-            NEW PATIENT
-        </button>
 
+        <div className="new-patient-form">
 
+            <button className="button" onClick={() => setButtonPopupPatient(true)}>NEW PATIENT</button>
+
+        </div>
     );
 
 }

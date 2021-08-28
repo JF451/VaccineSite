@@ -1,34 +1,28 @@
-import React from 'react';
-import './contact.css'
+import React from 'react'
+import './login.css'
 
-
-function Contact(props){
+function Login(props)
+{
 
     return (props.trigger) ? (
-        <div className="Contact">
-            <div className="Contact-inner">
-                <form className="contact-form">
+        <div className="Login">
+            <div className="Login-inner">
+                <form className="login-form">
                     <label>
-                        Name:
+                        UserName:
                         <input type="text" name="name" />
                     </label>
                     <label>
-                        Email:
+                        Password:
                         <input type="text" text="text" />
                     </label>
-                    <label>
-                        Message: 
-                        <textarea />
-                    </label>
-
                 </form>
                 <button className="close-btn" onClick={() => props.setTrigger(false)}>Close</button>
                 {props.children}
             </div>
         </div>
+
     ) : "";
-
-
 }
 
-export default Contact;
+export default Login;
