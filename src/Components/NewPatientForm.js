@@ -4,7 +4,6 @@ import './newpatientform.css'
 
 function NewPatientForm(props)
 {
-
     return (props.trigger) ? (
         <div className="Patient">
             <div className="Patient-inner">
@@ -18,6 +17,14 @@ function NewPatientForm(props)
                         <input type="text" />
                     </label>
                     <label>
+                        Full Adress: 
+                        <input type="text" />
+                    </label>
+                    <label>
+                        Insurance Card: 
+                        <input type="file" />
+                    </label>
+                    <label>
                         User Name: 
                         <input type="text" />
                     </label>
@@ -29,11 +36,6 @@ function NewPatientForm(props)
                         Repeat Password: 
                         <input type="text" />
                     </label>
-                    <label>
-                        Insurance Card: 
-                        <input type="file" />
-                    </label>
-
                 </form>
                 <button className="close-btn" onClick={() => props.setTrigger(false)}>Close</button>
                 {props.children}
