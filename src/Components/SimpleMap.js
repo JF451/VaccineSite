@@ -38,6 +38,11 @@ class SimpleMap extends Component {
                             </DropdownButton>
 
                         </div>
+
+                        <div>
+                            <input type="text" />
+                        </div>
+
                 </div>
         </div>
         )
