@@ -36,7 +36,6 @@ class SimpleMap extends Component {
                                 <Dropdown.Item href="#/action-2">10 miles</Dropdown.Item>
                                 <Dropdown.Item href="#/action-3">25 miles</Dropdown.Item>
                             </DropdownButton>
-
                         </div>
 
                         <div>
