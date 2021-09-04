@@ -17,17 +17,17 @@ function App() {
   const [buttonPopupPatient,setButtonPopupPatient] = useState(false);
   const [buttonPopupLogin,setButtonPopupLogin] = useState(false);
 
+  // const [currentTime,setCurrentTime] = useState(0);
+
   // useEffect(() => {
-  //     axios.get("https://animechan.vercel.app/api/quotes/anime?title=naruto")
-  //     .then(res => {
-  //       console.log(res.data);
-  //     }).catch(error => {
-  //       console.log(error);
-  //     })
-  // } , []) 
+  //   fetch('/').then(res => res.json()).then(data =>{
+  //     setCurrentTime(data.time);
+  //   })
+  // }, []);
 
   return (
     <div className="App">
+      {/* <p>The current time is {currentTime}.</p> */}
       <Header setButtonPopupLogin={setButtonPopupLogin} />
       <Contact trigger={buttonPopup} setTrigger={setButtonPopup} /> 
       <NewPatientForm trigger={buttonPopupPatient} setTrigger={setButtonPopupPatient} />
