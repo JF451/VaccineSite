@@ -28,6 +28,12 @@ class SimpleMap extends Component {
                             lng={-117.3755}
                             text="My Marker"
                         />
+
+                        <AnyReactComponent
+                            lat={33.9855}
+                            lng={-117.3766}
+                            text="Second Marker"
+                        />
                         </GoogleMapReact>
 
                         <div className="map-data">
@@ -38,8 +44,35 @@ class SimpleMap extends Component {
                             </DropdownButton>
                         </div>
 
-                        <div>
-                            <input type="text" />
+                        <div className="users-information">
+                            <form className="patient-form" method="post">
+
+                                <input type="text" name="variable" />
+                                <input type="submit" />
+                                
+                                {/* <label>
+                                    Address: 
+                                    <input name="Address" id="users-address" />
+                                </label>
+
+                                <label>
+                                    City: 
+                                    <input name="City" id="users-city" />
+                                </label>
+
+                                <label>
+                                    State: 
+                                    <input name="State" id="users-state" />
+                                </label>
+
+                                <label >
+                                    Zip: 
+                                    <input name="Zip" id="users-zip" />
+                                </label> */}
+
+                                
+                                
+                            </form>
                         </div>
 
                 </div>

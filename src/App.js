@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import './App.css';
 import Header from './Components/Header';
 import Tabs from './Components/Tabs';
@@ -8,6 +8,7 @@ import NewPatient from './Components/NewPatient';
 import Contact from './Components/Contact';
 import NewPatientForm from './Components/NewPatientForm';
 import Login from './Components/Login';
+import axios from 'axios';
 
 
 function App() {
@@ -15,6 +16,15 @@ function App() {
   const [buttonPopup,setButtonPopup] = useState(false);
   const [buttonPopupPatient,setButtonPopupPatient] = useState(false);
   const [buttonPopupLogin,setButtonPopupLogin] = useState(false);
+
+  // useEffect(() => {
+  //     axios.get("https://animechan.vercel.app/api/quotes/anime?title=naruto")
+  //     .then(res => {
+  //       console.log(res.data);
+  //     }).catch(error => {
+  //       console.log(error);
+  //     })
+  // } , []) 
 
   return (
     <div className="App">
