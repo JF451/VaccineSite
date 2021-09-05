@@ -17,17 +17,59 @@ function App() {
   const [buttonPopupPatient,setButtonPopupPatient] = useState(false);
   const [buttonPopupLogin,setButtonPopupLogin] = useState(false);
 
-  // const [currentTime,setCurrentTime] = useState(0);
+  function POST(path, data) {
+    return fetch(`http://localhost:5000${path}`,
+    {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }
+    )
+  }
 
-  // useEffect(() => {
-  //   fetch('/').then(res => res.json()).then(data =>{
-  //     setCurrentTime(data.time);
-  //   })
-  // }, []);
+  
+  
+  useEffect(() => {
+    fetch('http://localhost:5000/get').then(response => {
+      if(response.ok){
+        return response.json()
+      }
+    }).then(data => console.log(data))
+  },[])
+
+  const [text, setText] = useState('Input your name here');
+  const [name, setName] = useState('');
+
+  const onChange = e => {
+    setText(e.target.value)
+  }
+
+  const onClick = e => {
+    e.preventDefault();
+    POST('/post', {name: text}).then(
+      async (resp) => {
+        const json= await resp.json()
+        console.log(json.name)
+        setName(json.name)
+      }
+    )
+  }
+
 
   return (
     <div className="App">
-      {/* <p>The current time is {currentTime}.</p> */}
+
+      <form>
+       
+       <label>Input</label>
+       <input value={text} onChange={onChange} />
+       <input type="submit" value="Submit" onClick={onClick} />
+       </form>
+       <p>Your name is: <b>{name}</b></p>
+
+    
       <Header setButtonPopupLogin={setButtonPopupLogin} />
       <Contact trigger={buttonPopup} setTrigger={setButtonPopup} /> 
       <NewPatientForm trigger={buttonPopupPatient} setTrigger={setButtonPopupPatient} />

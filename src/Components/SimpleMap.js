@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import GoogleMapReact from 'google-map-react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
@@ -12,6 +12,7 @@ class SimpleMap extends Component {
         },
         zoom: 11
     };
+    
 
     render() {
         return(
@@ -45,12 +46,11 @@ class SimpleMap extends Component {
                         </div>
 
                         <div className="users-information">
-                            <form className="patient-form" method="post">
-
-                                <input type="text" name="variable" />
-                                <input type="submit" />
+                            <form className="patient-form" method="post" >
+                                <input type="text" name="Variable" />
+                                <input type="submit" value="Submit"/> 
                                 
-                                {/* <label>
+                                <label>
                                     Address: 
                                     <input name="Address" id="users-address" />
                                 </label>
@@ -68,11 +68,10 @@ class SimpleMap extends Component {
                                 <label >
                                     Zip: 
                                     <input name="Zip" id="users-zip" />
-                                </label> */}
+                                </label>
 
-                                
-                                
-                            </form>
+                                <input type='submit' value='Submit'/>     
+                             </form>
                         </div>
 
                 </div>

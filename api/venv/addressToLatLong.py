@@ -1,7 +1,9 @@
 from geopy.geocoders import Nominatim
 import re
-from flask import request
+from flask import Flask, request
 
+
+app = Flask(__name__)
 
 @app.route('handle_data', methods=['POST'])
 def getAddress():
