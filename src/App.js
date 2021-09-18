@@ -31,13 +31,6 @@ function App() {
 
   
   
-  useEffect(() => {
-    fetch('http://localhost:5000/get').then(response => {
-      if(response.ok){
-        return response.json()
-      }
-    }).then(data => console.log(data))
-  },[])
 
   const [text, setText] = useState('Input your name here');
   const [name, setName] = useState('');

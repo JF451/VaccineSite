@@ -1,6 +1,7 @@
 import React, {Component, useEffect} from 'react';
 import GoogleMapReact from 'google-map-react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
+import axios from 'axios';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -11,10 +12,28 @@ class SimpleMap extends Component {
             lng: -117.3755
         },
         zoom: 11
-    };
+
+        
+        };
+    formLogin = (e) => {
+        e.preventDefault();
+        axios
+           .post('http://localhost:5000/post', {
+
+               address: document.getElementById("users-address").value,
+               city: document.getElementById("users-city").value,
+               state: document.getElementById("users-state").value,
+               zip: document.getElementById("users-zip").value,
+           })
+           .then((res) => {
+                console.log(res.data)
+           });
+        }
+    
     
 
     render() {
+
         return(
             <div className="parent-map">
 
@@ -46,10 +65,8 @@ class SimpleMap extends Component {
                         </div>
 
                         <div className="users-information">
-                            <form className="patient-form" method="post" >
-                                <input type="text" name="Variable" />
-                                <input type="submit" value="Submit"/> 
-                                
+                            <form onSubmit={this.formLogin} className="patient-form" id="patient-form" name="patient-form" >
+                        
                                 <label>
                                     Address: 
                                     <input name="Address" id="users-address" />
@@ -78,6 +95,6 @@ class SimpleMap extends Component {
         </div>
         )
     }
-}
+};
 
 export default SimpleMap;
